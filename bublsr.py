@@ -25,16 +25,19 @@ def convertListToIntAndStrip (nonConvertedList):
 
 def saveListToFile (savedList, saveFileName):
     file = open (saveFileName, "w")
-    if file.writable(): #sprawdzenie czy plik jest zapisywalny 
+    if file.writable(): 
         for i in range (len (savedList)):
-            print (savedList, [i], file=file) #aby zapisac plik wystarczy otworzyc plik, nastepnie uzyc funkcji  
-    file.close()                    #print ('to co chcemy zapisac do naszego pliku', file=nazwa pliku), nalezy pamietac by na koniec go zamknac
+            print (savedList, [i], file=file)  
+    file.close()           
     
 beforeSortFile = ('sort.txt')
 afterSortFile = ('aftersort.txt')
 
 listFromFile = fileToList(beforeSortFile)
+
 listFromFile = convertListToIntAndStrip(listFromFile)
+
 print (bubbleSort (listFromFile))
+
 saveListToFile (listFromFile, afterSortFile)
 
